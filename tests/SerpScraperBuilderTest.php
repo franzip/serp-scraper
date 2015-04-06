@@ -229,7 +229,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords()
     {
-        $googleScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][0], 'baz', 'bar', 'bad', 24, 500));
+        $googleScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -238,7 +238,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords1()
     {
-        $googleScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][1], 'baz', 'bar', 'bad', 24, 500));
+        $googleScraper = Builder::create($this->engines[0], array($this->invalidKeywords[1], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -247,7 +247,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords2()
     {
-        $askScraper = Builder::create($this->engines[1], array($this->invalidKeywords[0][2], 'baz', 'bar', 'bad', 24, 500));
+        $askScraper = Builder::create($this->engines[1], array($this->invalidKeywords[2], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -256,7 +256,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords3()
     {
-        $bingScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][3], 'baz', 'bar', 'bad', 24, 500));
+        $bingScraper = Builder::create($this->engines[0], array($this->invalidKeywords[3], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -265,7 +265,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords4()
     {
-        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][4], 'baz', 'bar', 'bad', 24, 500));
+        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[4], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -274,7 +274,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords5()
     {
-        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][5], 'baz', 'bar', 'bad', 24, 500));
+        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[5], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -283,7 +283,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords6()
     {
-        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][6], 'baz', 'bar', 'bad', 24, 500));
+        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[6], 'baz', 'bar', 'bad', 24, 500));
     }
 
     /**
@@ -292,7 +292,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidKeywords7()
     {
-        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[0][7], 'baz', 'bar', 'bad', 24, 500));
+        $yahooScraper = Builder::create($this->engines[0], array($this->invalidKeywords[7], 'baz', 'bar', 'bad', 24, 500));
     }
 }
 
