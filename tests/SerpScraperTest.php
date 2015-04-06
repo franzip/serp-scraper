@@ -791,7 +791,6 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
             $this->assertNull($parser->lint($json));
         }
         $this->assertTrue($googleScraper->addKeywords(array('foo bad')));
-        var_dump($googleScraper->getKeywords());
         $this->assertTrue($googleScraper->scrapeAll(3, true));
         $this->assertCount(3, $googleScraper->getFetchedPages());
         $this->assertTrue($googleScraper->serialize('xml', true));
