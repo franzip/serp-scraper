@@ -323,6 +323,11 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
         $this->engines = $engines;
     }
 
+    protected function tearDown()
+    {
+        TestHelper::cleanMess();
+    }
+
     public function testKeyToUrlMapping()
     {
         $googleScraper = Builder::create($this->engines[0],
@@ -796,7 +801,8 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
                              array_keys($googleScraper->getSerializedPages()));
         $this->assertTrue($googleScraper->save(true));
         for ($i = 0; $i < count($toCheck); $i++) {
-            $xml = \XMLReader::open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
+            $xml = new \XMLReader();
+            $xml->open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
             $xml->setParserProperty(\XMLReader::VALIDATE, true);
             $this->assertTrue($xml->isValid());
         }
@@ -829,7 +835,8 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($askScraper->save(true));
         $this->assertCount(0, $askScraper->getSerializedPages());
         for ($i = 0; $i < count($toCheck); $i++) {
-            $xml = \XMLReader::open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
+            $xml = new \XMLReader();
+            $xml->open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
             $xml->setParserProperty(\XMLReader::VALIDATE, true);
             $this->assertTrue($xml->isValid());
         }
@@ -885,7 +892,8 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
                              array_keys($bingScraper->getSerializedPages()));
         $this->assertTrue($bingScraper->save(true));
         for ($i = 0; $i < count($toCheck); $i++) {
-            $xml = \XMLReader::open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
+            $xml = new \XMLReader();
+            $xml->open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
             $xml->setParserProperty(\XMLReader::VALIDATE, true);
             $this->assertTrue($xml->isValid());
         }
@@ -918,7 +926,8 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($yahooScraper->save(true));
         $this->assertCount(0, $yahooScraper->getSerializedPages());
         for ($i = 0; $i < count($toCheck); $i++) {
-            $xml = \XMLReader::open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
+            $xml = new \XMLReader();
+            $xml->open($outDir . DIRECTORY_SEPARATOR . $toCheck[$i]);
             $xml->setParserProperty(\XMLReader::VALIDATE, true);
             $this->assertTrue($xml->isValid());
         }
