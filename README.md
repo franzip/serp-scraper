@@ -277,7 +277,8 @@ data over and over again.
 ```php
 use Franzip\SerpScraper\SerpScraperBuilder;
 
-$googleScraper = SerpScraperBuilder::create('Google', array(array('foo', 'baz', ...)));
+$googleScraper = SerpScraperBuilder::create('Google',
+                                            array(array('foo', 'baz', ...)));
 
 // output folders
 $xmlDir  = 'google_results/xml';
