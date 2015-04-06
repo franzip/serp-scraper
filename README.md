@@ -129,10 +129,10 @@ $askScraper = new AskScraper($keywords = array('foo', bar),
 You can scrape a single tracked keyword with ```scrape()```, or scrape all the
 tracked keywords using ```scrapeAll()```.
 
-```scrape()```:
+```scrape()``` signature:
 ```php
-$serpScraper->scrape($keyword, $pagesToScrape = 1, $toRemove = false, $timezone = 'UTC',
-                     $throttling = true);
+$serpScraper->scrape($keyword, $pagesToScrape = 1, $toRemove = false,
+                     $timezone = 'UTC', $throttling = true);
 ```
 
 Usage example:
@@ -143,7 +143,7 @@ Usage example:
 $serpScraper->scrape('foo', 5, true, 'America/Los Angeles', false);
 ```
 
-```scrapeAll()```:
+```scrapeAll()``` signature:
 
 ```php
 $serpScraper->scrapeAll($pagesToScrape = 1, $toRemove = false, $timezone = 'UTC',
@@ -167,7 +167,7 @@ Serialize all the results fetched so far. Supported formats are: JSON, XML and
 YAML.
 You can access the fetched array by calling ```getFetchedPages()```.
 
-```serialize()```:
+```serialize()``` signature:
 ```php
 $serpScraper->serialize($format, $toRemove = false);
 ```
@@ -194,19 +194,20 @@ var_dump($serpScraper->getFetchedPages());
 // array()
 ```
 
-
-
-
 ## save() and getSerializedPages()
 
 Write to files the serialized results so far.
 The format used as filename is the following:
-```vendor_keyword_pagenumber_time.format```
-```google_foo_3_12032015.json```
+*vendor_keyword_pagenumber_time.format* | *google_foo_3_12032015.json*
 
+```save()``` signature:
 ```php
 $serpScraper->save($toRemove = false)
+```
 
+Usage example:
+
+```php
 // write serialized results so far to the specified output folder
 $serpScraper->save();
 // serialized pages are still there
