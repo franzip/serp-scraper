@@ -84,11 +84,11 @@ SerpScraper($keywords, $outDir = 'out', $fetcherCacheDir = 'fetcher_cache',
 2. `$outDir` - string
     - Path to the folder to be used to store serialized pages.
 3. `$fetcherCacheDir` - string
-    - Path to the folder to be used to store SerpFetcher cache.
+    - Path to the folder to be used to store [SerpFetcher](https://github.com/franzip/serp-fetcher) cache.
 4. `$serializerCacheDir` - string
-    - Path to the folder to be used to store SerpPageSerializer cache.
+    - Path to the folder to be used to store [SerpPageSerializer](https://github.com/franzip/serp-page-serializer) cache.
 5. `$cacheTTL` - integer
-    - Time expiration of the SerpFetcher cache expressed in hours.
+    - Time expiration of the [SerpFetcher](https://github.com/franzip/serp-fetcher) cache expressed in hours.
 6. `$requestDelay` - integer
     - Delay to use between multiple HTTP requests, expressed in microseconds.
 
@@ -136,6 +136,7 @@ $serpScraper->scrape($keyword, $pagesToScrape = 1, $toRemove = false, $timezone 
 ```
 
 Usage example:
+
 ```php
 // Scrape the first 5 pages for the keyword 'foo', remove it from the tracked
 // keyword, use the Los Angeles timezone and don't use throttling.
@@ -143,6 +144,7 @@ $serpScraper->scrape('foo', 5, true, 'America/Los Angeles', false);
 ```
 
 ```scrapeAll()```:
+
 ```php
 $serpScraper->scrapeAll($pagesToScrape = 1, $toRemove = false, $timezone = 'UTC',
                         $throttling = true);
