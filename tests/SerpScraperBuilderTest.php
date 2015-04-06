@@ -61,7 +61,7 @@ class BuilderInvalidArgsTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $invalidDirs = array(1, '', false);
+        $invalidDirs = array(1, '', false, 21);
         $invalidTime = array('', 'foo', ' ', false);
         $invalidKeywords = array(array(''), array(' '), array(false), array(2),
                            array(str_repeat('foo', 100)), array('foo' => 'bar'),
