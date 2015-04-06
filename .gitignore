@@ -1,0 +1,9 @@
+vendor/
+composer.phar
+composer.lock
+fetcher_cache/
+**/fetcher_cache/
+serializer_cache/
+**/serializer_cache/
+out/
+**/out/
