@@ -104,7 +104,7 @@ class SerpScraperHelper
     public static function keywordsAllTracked($keywords, $trackingKeywords)
     {
         return !in_array(false, array_map(function($keyword) use ($trackingKeywords) {
-            return self::keywordPresent($keyword, $trackingKeywords);
+            return in_array($keyword, $trackingKeywords);
         }, $keywords));
     }
 
