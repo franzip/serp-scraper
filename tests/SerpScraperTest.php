@@ -407,13 +407,13 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
 
         $yahooScraper = Builder::create($this->engines[2], array(array('foo')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Yahoo');
-        $this->assertEquals($mapKeywordsToUrls->invokeArgs($googleScraper, array(1, 'foo')),
+        $this->assertEquals($mapKeywordsToUrls->invokeArgs($yahooScraper, array(1, 'foo')),
                             array(
                                   "foo" => array("https://search.yahoo.com/search?p=foo&b=1")
                                   )
                             );
 
-        $this->assertEquals($mapKeywordsToUrls->invokeArgs($googleScraper, array(5, $yahooScraper->getKeywords())),
+        $this->assertEquals($mapKeywordsToUrls->invokeArgs($yahooScraper, array(5, $yahooScraper->getKeywords())),
                             array(
                                   "foo" => array("https://search.yahoo.com/search?p=foo&b=1",
                                                  "https://search.yahoo.com/search?p=foo&b=11",
@@ -453,7 +453,7 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
 
         $askScraper = Builder::create($this->engines[1], array(array('foobar', 'baz')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Ask');
-        $urlsToScrape = $mapKeywordsToUrls->invokeArgs($googleScraper,
+        $urlsToScrape = $mapKeywordsToUrls->invokeArgs($askScraper,
                                                        array(1, $askScraper->getKeywords()));
         $hitCounter = TestHelper::getMethod('hitCounter', 'Ask');
         list($globalHitCount, $componentHitCount) = $hitCounter->invokeArgs($askScraper,
@@ -565,7 +565,7 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($hitChecker->invokeArgs($googleScraper,
                                                    array($globalHitCount, $componentHitCount)));
 
-        $askScraper = Builder::create($this->engines[0], array(array('foo', 'baz', 'foobaz')));
+        $askScraper = Builder::create($this->engines[1], array(array('foo', 'baz', 'foobaz')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Ask');
         $hitCounter = TestHelper::getMethod('hitCounter', 'Ask');
         $hitChecker = TestHelper::getMethod('hitChecker', 'Ask');
@@ -595,7 +595,7 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
                                                                             array($urlsToScrape));
         $this->assertFalse($hitChecker->invokeArgs($askScraper, array($globalHitCount, $componentHitCount)));
 
-        $bingScraper = Builder::create($this->engines[0], array(array('foo', 'baz', 'foobaz')));
+        $bingScraper = Builder::create($this->engines[2], array(array('foo', 'baz', 'foobaz')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Bing');
         $hitCounter = TestHelper::getMethod('hitCounter', 'Bing');
         $hitChecker = TestHelper::getMethod('hitChecker', 'Bing');
