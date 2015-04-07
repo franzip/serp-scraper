@@ -405,7 +405,7 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
                                   )
                             );
 
-        $yahooScraper = Builder::create($this->engines[2], array(array('foo')));
+        $yahooScraper = Builder::create($this->engines[3], array(array('foo')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Yahoo');
         $this->assertEquals($mapKeywordsToUrls->invokeArgs($yahooScraper, array(1, 'foo')),
                             array(
@@ -504,7 +504,7 @@ class ScrapingTest extends PHPUnit_Framework_TestCase
         $yahooScraper = Builder::create($this->engines[3], array(array('foo')));
         $mapKeywordsToUrls = TestHelper::getMethod('mapKeywordsToUrls', 'Yahoo');
         $hitCounter = TestHelper::getMethod('hitCounter', 'Yahoo');
-        $urlsToScrape = $mapKeywordsToUrls->invokeArgs($bingScraper,
+        $urlsToScrape = $mapKeywordsToUrls->invokeArgs($yahooScraper,
                                                        array(1, $yahooScraper->getKeywords()));
         list($globalHitCount, $componentHitCount) = $hitCounter->invokeArgs($yahooScraper,
                                                                             array($urlsToScrape));
